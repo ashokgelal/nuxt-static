@@ -3,7 +3,7 @@
     <div>
       <Logo />
       <h1 class="title">
-        cleavr-sample
+        cleavr-nuxt-sample
       </h1>
       <div class="links">
         <a
