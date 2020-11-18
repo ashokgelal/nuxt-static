@@ -32,9 +32,9 @@ jobs:
 #          name: "${{ steps.time.outputs.time }}"
 #          path: dist/
   
-      - name: Trigger Cleavr Deployment
-        uses: fjogeleit/http-request-action@master
-        with:
-          url: '${{ secrets.DEPLOY_TRIGGER_HOOK_CLEAVR }}'
-          method: 'POST'
-          timeout: 60000
+ #     - name: Trigger Cleavr Deployment
+ #       uses: fjogeleit/http-request-action@master
+ #       with:
+ #         url: '${{ secrets.DEPLOY_TRIGGER_HOOK_CLEAVR }}'
+ #         method: 'POST'
+ #         timeout: 60000
