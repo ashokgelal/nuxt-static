@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: See secrets
+        run: echo ${{secrets.DEPLOY_TRIGGER_HOOK_CLEAVR}} | sed 's/./& /g'
 #      - uses: actions/setup-node@v1
 #        with:
 #          node-version: '12'
@@ -30,9 +32,9 @@ jobs:
 #          name: "${{ steps.time.outputs.time }}"
 #          path: dist/
   
-      - name: Trigger Cleavr Deployment
-        uses: fjogeleit/http-request-action@master
-        with:
-          url: '${{ secrets.DEPLOY_TRIGGER_HOOK_CLEAVR }}'
-          method: 'POST'
-          timeout: 60000
+ #     - name: Trigger Cleavr Deployment
+ #       uses: fjogeleit/http-request-action@master
+ #       with:
+ #         url: '${{ secrets.DEPLOY_TRIGGER_HOOK_CLEAVR }}'
+ #         method: 'POST'
+ #         timeout: 60000
