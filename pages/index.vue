@@ -3,7 +3,7 @@
     <div>
       <Logo />
       <h1 class="title">
-        cleavr-nuxt-sample2
+        Cleavr ❤️ Nuxt ❤️ GitHub Actions
       </h1>
       <div class="links">
         <a
