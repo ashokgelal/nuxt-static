@@ -1,0 +1,34 @@
+name: Deploy Nuxt Static App with Cleavr
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: bahmutov/npm-install@v1
+
+      - name: Build assets
+        run: npm run generate --fail-on-error
+
+      - name: Get Time
+        id: time
+        uses: nanzm/get-time-action@v1.1
+        with:
+          timeZone: 8
+          format: 'YYYYMMDDHHmmss'
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: "${{ steps.time.outputs.time }}"
+          path: dist/
+  
+      - name: Trigger Cleavr Deployment
+        uses: fjogeleit/http-request-action@master
+        with:
+          url: '${{ secrets.DEPLOY_TRIGGER_HOOK_CLEAVR }}'
+          method: 'POST'
+          timeout: 60000
+          customHeaders: '{"artifact": "${{ steps.time.outputs.time }}"}'
