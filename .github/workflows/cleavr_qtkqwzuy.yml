@@ -1,5 +1,6 @@
 name: Deploy Nuxt Static App with Cleavr
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
