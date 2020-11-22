@@ -31,11 +31,11 @@ jobs:
           timeZone: 8
           format: 'YYYYMMDDHHmmss'
 
-      - name: Upload artifact
-      - uses: actions/upload-artifact@v2
-        with:
-          name: '${{ steps.time.outputs.time }}'
-          path: .nuxt/
+#       - name: Upload artifact
+#       - uses: actions/upload-artifact@v2
+#         with:
+#           name: '${{ steps.time.outputs.time }}'
+#           path: .nuxt/
 
 #       - name: Start Cleavr Deployment
 #         uses: fjogeleit/http-request-action@master
