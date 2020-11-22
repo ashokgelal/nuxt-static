@@ -24,23 +24,23 @@ jobs:
   
 ### ---  PLEASE DO NOT CHANGE ANYTHING BELOW THIS LINE --- ###
 
-      - name: Generate artifact name
-        id: time
-        uses: nanzm/get-time-action@v1.1
-        with:
-          timeZone: 8
-          format: 'YYYYMMDDHHmmss'
+#       - name: Generate artifact name
+#         id: time
+#         uses: nanzm/get-time-action@v1.1
+#         with:
+#           timeZone: 8
+#           format: 'YYYYMMDDHHmmss'
 
-      - name: Upload artifact
-      - uses: actions/upload-artifact@v2
-        with:
-          name: '${{ steps.time.outputs.time }}'
-          path: .nuxt/
+#       - name: Upload artifact
+#       - uses: actions/upload-artifact@v2
+#         with:
+#           name: '${{ steps.time.outputs.time }}'
+#           path: .nuxt/
 
-      - name: Start Cleavr Deployment
-        uses: fjogeleit/http-request-action@master
-        with:
-          url: '${{ secrets.DEPLOY_TRIGGER_HOOK_cleavr_nrvhkapu }}'
-          method: 'POST'
-          timeout: 60000
-          customHeaders: '{"artifact": "${{ steps.time.outputs.time }}"}'
+#       - name: Start Cleavr Deployment
+#         uses: fjogeleit/http-request-action@master
+#         with:
+#           url: '${{ secrets.DEPLOY_TRIGGER_HOOK_cleavr_nrvhkapu }}'
+#           method: 'POST'
+#           timeout: 60000
+#           customHeaders: '{"artifact": "${{ steps.time.outputs.time }}"}'
