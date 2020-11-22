@@ -37,10 +37,10 @@ jobs:
           name: '${{ steps.time.outputs.time }}'
           path: .nuxt/
 
-      - name: Start Cleavr Deployment
-        uses: fjogeleit/http-request-action@master
-        with:
-          url: '${{ secrets.DEPLOY_TRIGGER_HOOK_cleavr_nrvhkapu }}'
-          method: 'POST'
-          timeout: 60000
-          customHeaders: '{"artifact": "${{ steps.time.outputs.time }}"}'
+#       - name: Start Cleavr Deployment
+#         uses: fjogeleit/http-request-action@master
+#         with:
+#           url: '${{ secrets.DEPLOY_TRIGGER_HOOK_cleavr_nrvhkapu }}'
+#           method: 'POST'
+#           timeout: 60000
+#           customHeaders: '{"artifact": "${{ steps.time.outputs.time }}"}'
